@@ -10,6 +10,11 @@
       "StackName": "amplify-bitcoinwatch-dev-172352",
       "StackId": "arn:aws:cloudformation:us-east-2:533811257098:stack/amplify-bitcoinwatch-dev-172352/67149630-fa0e-11ea-adc8-068deee6a6ae",
       "AmplifyAppId": "d2nv7oakby1rs1"
+    },
+    "categories": {
+      "auth": {
+        "bitcoinwatchbde22ba8": {}
+      }
     }
   }
 }

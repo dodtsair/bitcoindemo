@@ -3,8 +3,9 @@ import React, { useEffect, useState } from 'react'
 import Amplify, { API, graphqlOperation } from 'aws-amplify'
 import { createNewWatch } from './graphql/mutations'
 import { getWatchList } from './graphql/queries'
-
+import { withAuthenticator } from '@aws-amplify/ui-react'
 import awsExports from "./aws-exports";
+
 Amplify.configure(awsExports);
 
 const initialState = { name: '', bitcoinaddress: '' }
@@ -80,4 +81,4 @@ const styles = {
   button: { backgroundColor: 'black', color: 'white', outline: 'none', fontSize: 18, padding: '12px 0px' }
 }
 
-export default App
+export default withAuthenticator(App)
