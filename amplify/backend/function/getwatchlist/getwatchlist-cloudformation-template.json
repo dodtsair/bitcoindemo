@@ -116,7 +116,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "amplify-bitcoinwatch-dev-172352-deployment",
-          "S3Key": "amplify-builds/getwatchlist-466a78502b672b535072-build.zip"
+          "S3Key": "amplify-builds/getwatchlist-6b7535324a4e6c434834-build.zip"
         }
       }
     },

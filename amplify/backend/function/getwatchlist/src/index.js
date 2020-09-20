@@ -40,30 +40,34 @@ exports.handler = async (event) => {
             query: print(listWatches),
         }
     });
-    const balances = graphqlData.data.data.listWatchs.items.map(watch => {
-        const watchBalance = new Promise((resolve, reject) => {
-            balance(watch.bitcoinaddress, (error, result) => {
-                if (error) reject(error);
-                const bitcoinBalance = result && result.filter(aBalance => aBalance.asset === 'BTC')
-                if (bitcoinBalance) {
-                    resolve({
-                        name: watch.name,
-                        bitcoinaddress: watch.bitcoinaddress,
-                        balance: null
-                    })
-                } else {
-                    resolve({
-                        name: watch.name,
-                        bitcoinaddress: watch.bitcoinaddress,
-                        balance: bitcoinBalance.quantity
-                    })
-                }
+    const balances = graphqlData.data.data.listWatchs.items.reduce((prior, watch) => {
+        const previous = prior.length > 0 && prior[prior.length - 1] || Promise.resolve();
+        prior.push(previous.then(() => {
+            const watchBalance = new Promise((resolve, reject) => {
+                balance(watch.bitcoinaddress, (error, result) => {
+                    if (error) reject(error);
+                    const bitcoinBalance = result && result.find(aBalance => aBalance.asset === 'BTC')
+                    if (!bitcoinBalance) {
+                        resolve({
+                            name: watch.name,
+                            bitcoinaddress: watch.bitcoinaddress,
+                            balance: null
+                        })
+                    } else {
+                        resolve({
+                            name: watch.name,
+                            bitcoinaddress: watch.bitcoinaddress,
+                            balance: bitcoinBalance.quantity
+                        })
+                    }
 
+                })
             })
-        })
-        return watchBalance;
-    })
-    // return graphqlData.data;
+            return watchBalance;
+
+        }));
+        return prior;
+    }, [])
     return Promise.all(balances)
 }
 
