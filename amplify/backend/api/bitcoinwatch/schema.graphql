@@ -1,0 +1,20 @@
+type Watch @model {
+  id: ID!
+  name: String
+  bitcoinaddress: String
+}
+
+type Balance {
+  name: String!
+  bitcoinaddress: String!
+  balance: String
+}
+
+type Query {
+  getWatchList: [Balance!]! @function(name: "getwatchlist-${env}")
+}
+
+type Mutation {
+  createNewWatch(name: String!, bitcoinaddress:String!): String @function(name: "createwatch-${env}")
+}
+

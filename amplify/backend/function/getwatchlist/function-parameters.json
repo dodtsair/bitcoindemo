@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "api": {
+      "bitcoinwatch": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    },
+    "storage": {
+      "Watch:@model(appsync)": [
+        "read"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}
