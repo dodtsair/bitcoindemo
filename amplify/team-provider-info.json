@@ -1,20 +1,26 @@
 {
-  "dev": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-bitcoinwatch-dev-172352-authRole",
-      "UnauthRoleArn": "arn:aws:iam::533811257098:role/amplify-bitcoinwatch-dev-172352-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::533811257098:role/amplify-bitcoinwatch-dev-172352-authRole",
-      "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-bitcoinwatch-dev-172352-deployment",
-      "UnauthRoleName": "amplify-bitcoinwatch-dev-172352-unauthRole",
-      "StackName": "amplify-bitcoinwatch-dev-172352",
-      "StackId": "arn:aws:cloudformation:us-east-2:533811257098:stack/amplify-bitcoinwatch-dev-172352/67149630-fa0e-11ea-adc8-068deee6a6ae",
-      "AmplifyAppId": "d2nv7oakby1rs1"
-    },
-    "categories": {
-      "auth": {
-        "bitcoinwatchbde22ba8": {}
-      }
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-bitcoinwatch-dev-172352-authRole",
+            "UnauthRoleArn": "arn:aws:iam::533811257098:role/amplify-bitcoinwatch-dev-172352-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::533811257098:role/amplify-bitcoinwatch-dev-172352-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-bitcoinwatch-dev-172352-deployment",
+            "UnauthRoleName": "amplify-bitcoinwatch-dev-172352-unauthRole",
+            "StackName": "amplify-bitcoinwatch-dev-172352",
+            "StackId": "arn:aws:cloudformation:us-east-2:533811257098:stack/amplify-bitcoinwatch-dev-172352/67149630-fa0e-11ea-adc8-068deee6a6ae",
+            "AmplifyAppId": "d2nv7oakby1rs1"
+        },
+        "categories": {
+            "auth": {
+                "bitcoinwatchbde22ba8": {}
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d2nv7oakby1rs1",
+                    "type": "manual"
+                }
+            }
+        }
     }
-  }
 }
