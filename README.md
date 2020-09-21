@@ -122,6 +122,7 @@ Now when you have a framework like Amplify that "does it for you" it really
     , it just does not do it right.
     
   Mitigation plans
+  
   See the mitigations for one, but with the additional mitigation, be
    prepared to spend
    resources on the
@@ -150,6 +151,7 @@ Now when you have a framework like Amplify that "does it for you" it really
         .  It will get there over time, but its not there today.
      
   Mitigation plans
+  
   See the mitigations for two, additionally be prepared to become a framework
    expert.  If the framework breaks with a bug, you'll need to triage the
     framework itself.  Be prepared to fix the bug in the framework and hand
